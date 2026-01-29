@@ -18,11 +18,4 @@ def add_product(inventory, name, price, quantity):
 
 
 def sell_product(inventory, name, quantity):
-    for item in inventory:
-        if item['name'] == name:
-            if item['quantity'] < quantity:
-                raise InsufficientStockError(f"Not enough {name} in stock!")
-            item['quantity'] -= quantity
-            return True
-
-    raise ValueError(f"Product {name} not found!")
+    "your code"
