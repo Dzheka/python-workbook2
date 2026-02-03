@@ -61,5 +61,3 @@ To finish the lesson, show your teacher the output of:
 Bash
 git log --oneline
 You should have at least 4 commits.
-
-Would you like me to create a "Git Troubleshooting" section for common student mistakes (like forgetting to type a commit message)?
