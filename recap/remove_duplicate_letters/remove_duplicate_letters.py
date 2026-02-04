@@ -1,5 +1,13 @@
 def remove_duplicate_letters(text: str) -> str:
-    """ your code """
+    res = []
+    for i in range (len(text)):
+        let = text[i]
+        if let not in res:
+            res.append(let)
+    res = "".join(res)
+    return res
+
+
 
 
 if __name__ == "__main__":
