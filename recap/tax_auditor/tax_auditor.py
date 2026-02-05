@@ -1,9 +1,26 @@
 def calculate_tax(category, price):
-    """ your code """
+    if category == "Food":
+         tax = (5/100)*price
+         return tax
+    elif category == "Electronics":
+         tax = (20/100)*price
+         return tax
+    else:
+         tax = (10/100)*price
+         return tax
 
 
 def process_sales(data_list):
-        """ your code """
+    sales_dict = {}
+    for item in data_list:
+        transaction_id, product_name, category, base_price = item
+        tax = calculate_tax(category, base_price)
+        sales_dict [transaction_id] = {
+            "name": product_name,
+            "total_price": base_price + tax,
+            "is_premium": base_price + tax > 500
+        }
+    return sales_dict
 
 
 
