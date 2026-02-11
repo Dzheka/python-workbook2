@@ -183,3 +183,5 @@ uv.lock
 
 # typst generated pdf files
 slides/**/*.pdf
+.DS_Store
+json
