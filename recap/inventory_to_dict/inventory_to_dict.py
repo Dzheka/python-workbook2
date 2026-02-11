@@ -1,5 +1,15 @@
 def inventory_to_dict(inventory_list):
-    """ your code """
+    inventory_dict = {}
+
+    for item in inventory_list:
+        product_id, name, price, category = item
+        inventory_dict[product_id] = {
+            "name": name,
+            "price": price,
+            "category": category
+        }
+
+    return inventory_dict
 
 
 def main():
@@ -17,3 +27,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
