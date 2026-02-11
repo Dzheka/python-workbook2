@@ -1,5 +1,9 @@
 def factorial(n: int) -> int:
-    """ your code """
+    if n < 0:
+        return "Invalid Number  Input"
+    elif n == 0:
+        return 1
+    return n * factorial(n-1)
 
 
 if __name__ == "__main__":
