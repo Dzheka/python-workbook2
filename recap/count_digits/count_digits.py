@@ -1,5 +1,5 @@
 def count_digits(n: int) -> int:
-    """ your code """
+    print("Hello World!")
 
 
 if __name__ == "__main__":
