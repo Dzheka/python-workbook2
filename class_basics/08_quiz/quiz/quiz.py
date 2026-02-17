@@ -1,20 +1,14 @@
 from quiz_data import student_data
 
 class Student:
-    def __init__(self, name, ratings, extra_points=0):
+    def __init__(self, name, group, problems, extra_points=0):
         self.name = name
-        self.problems = {}
+        self.group = group
+        self.problems = problems
         self.extra_points = extra_points
 
-        for i in range(17):
-            if i < len(ratings):
-                self.problems[i + 1] = ratings[i]
-            else:
-                self.problems[i + 1] = 0
-        
     def get_score(self):
-        avg = sum(self.problems.values()) + self.extra_points
-        return avg
+        return sum(self.problems.values()) + self.extra_points
     
     def add_extra(self, points):
         self.extra_points += points
@@ -31,7 +25,7 @@ class Student:
         for num, score in self.problems.items():
             if score == 0:
                 failed.append(num)
-            return failed
+        return failed
         
     def display(self):
         print(f"Student: {self.name}")
@@ -41,13 +35,13 @@ class Student:
         print(f"Total score: {self.get_score()}")
         print("-" * 30)
 
-    def N(self):
+    def get_n(self):
         return len(self.solved_list())
     
-    def V(self):
+    def get_v(self):
         return sum(self.problems.values())
     
-    def K(self):
+    def get_k(self):
         return self.get_score()
     
 class Problem:
@@ -87,22 +81,19 @@ class Problem:
 students = []
 for name, info in student_data.items():
     ratings = info.get("ratings", [])
-    student = Student(name, ratings)
+    problems = {}
+    for i in range(17):
+        if i < len(ratings):
+            problems[i+1] = ratings[i]
+        else:
+            problems[i+1] = 0
+
+    student = Student(name, group=1, problems=problems)
     students.append(student)
 
 students[0].add_extra(5)
 
 for s in students:
     s.display()
-    print(f"N = {s.N()}, V = {s.V()}, k = {s.K()}")
+    print(f"N = {s.get_n()}, V = {s.get_n()}, k = {s.get_k()}")
     print("="*40)
-
-problem_points = [4, 3, 2, 8, 5, 4, 10, 5, 2, 3, 3, 3, 4, 5, 4, 4, 3]
-problems = []
-for i in range(len(problem_points)):
-    pts = problem_points[i]
-    problem = Problem(i + 1, f"Problem {i + 1}", pts)
-    problems.append(problem)
-
-for p in problems:
-    p.display(students)
