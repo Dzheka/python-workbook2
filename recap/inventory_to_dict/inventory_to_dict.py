@@ -1,5 +1,15 @@
 def inventory_to_dict(inventory_list):
-    """ your code """
+    inventory_dict = {}
+
+    for item in inventory_list:
+        product_id, name, price, category = item
+        inventory_dict[product_id] = {
+            "name": name,
+            "price": price,
+            "category": category,
+        }
+
+    return inventory_dict
 
 
 def main():
@@ -8,7 +18,7 @@ def main():
         ["P102", "iPhone 15", 1000, "Phones"],
         ["P103", "AirPods Pro", 250, "Accessories"],
         ["P104", "Dell XPS 15", 2000, "Laptops"],
-        ["P105", "Mechanical Keyboard", 150, "Accessories"]
+        ["P105", "Mechanical Keyboard", 150, "Accessories"],
     ]
 
     result = inventory_to_dict(inventory_list)
