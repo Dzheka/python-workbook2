@@ -9,15 +9,17 @@ class Book():
 
 
 
-class Library(name):
-    global books
-    books = []
-    def add_book(self, book):
-        books.append[book]
-        return f"Added: {book}"
+class Library():
+    def __init__(self,name,books = []) -> None:
+        self.name = name
+        self.books = books
+
+    def add_book(self, n_book):
+        self.books.append(n_book)
+        return f"Added: {self.book.n_book}"
 
     def find_book(self,title):
-        for book in books:
+        for book in self.books:
             if book == title:
                 return self.books
         return None
