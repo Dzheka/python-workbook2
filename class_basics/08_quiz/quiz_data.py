@@ -1,5 +1,5 @@
 student_data = {
-    "Abdul-Aziz": {"score": "77%", "ratings": [4, 2, 4, 8, 5, 3, 10, 4, 3, 3, 4, 10, 4, 1, 6, 4, 2]},
+    "Abdul-Aziz": {"score": "77%", "ratings": [4, 2, 4, 8, 5, 3,10, 4, 3, 3, 4, 10, 4, 1, 6, 4, 2]},
     "Abdullo": {"score": "47%", "ratings": [1, 3, 0, 8, 0, 4, 8, 0, 4, 0, 0, 0, 0, 4, 5, 5, 4, 1]},
     "Abubakr": {"score": "59%", "ratings": [4, 3, 4, 8, 5, 0, 10, 1, 4, 4, 5, 0, 4, 0, 2, 4, 1]},
     "Ahmadjon": {"score": "0%", "ratings": []},

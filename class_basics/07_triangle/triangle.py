@@ -32,8 +32,30 @@ class Triangle():
         A = 180-B-C
         return [round(A,2), round(B, 2), round(C,2)]
 
+    def get_angle_type(self):
+        sides = sorted([self.a, self.b, self.c])
+        a,b,c = sides
+
+        lhs = c **2
+        rhs = a**2 + b**2
+
+        if abs(lhs - rhs) == 0:
+            return "right"
+        elif lhs < rhs:
+            return "acute"
+        else:
+            return "obtuse"
+
+
     def scale(self,factor):
-        return self.a*factor, self.b*factor, self.c*factor
+        return Triangle(self.a*factor, self.b*factor, self.c*factor)
+
+    def is_similar(self, s_triangle):
+        if ((s_triangle.a / self.a)) == (s_triangle.c / self.c) == (s_triangle.b / self.b):
+            return True
+        else:
+            return False
+
 
 
 
@@ -45,7 +67,7 @@ print(triangle1.calculate_perimeter())  # 12
 print(triangle1.calculate_area())       # 6.0
 print(triangle1.get_type())            # scalene
 print(triangle1.get_angles())          # [36.87, 53.13, 90.0]
-#print(triangle1.get_angle_type())      # right
+print(triangle1.get_angle_type())      # right
 
 scaled = triangle1.scale(2)
 print(scaled.a, scaled.b, scaled.c)    # 6 8 10

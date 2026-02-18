@@ -16,17 +16,16 @@ class Library():
 
     def add_book(self, n_book):
         self.books.append(n_book)
-        return f"Added: {self.book.n_book}"
+        print(f"Added: {n_book}")
 
-    def find_book(self,title):
+    def find_book(self, title):
         for book in self.books:
-            if book == title:
-                return self.books
-        return None
+            if book.title == title:
+                return book
 
     def list_books(self):
         for book in self.books:
-            print(f"{book}\n")
+            print(f"{Book(book.title, book.author, book.isbn)}")
 
 library = Library("City Library")
 book1 = Book("1984", "George Orwell", "123")
