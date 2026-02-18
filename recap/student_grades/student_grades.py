@@ -1,9 +1,12 @@
 def get_status(score):
-        """ your code """
+    return "Pass" if score >= 50 else "Fail"
 
 
 def process_grades(data):
-    """ your code """
+    result = {}
+    for name, score in data:
+        result[name] = get_status(score)
+    return result
 
 
 def main():
