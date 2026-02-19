@@ -1,5 +1,7 @@
 def count_digits(n: int) -> int:
-    """ your code """
+    n = abs(n)
+    n = str(n)
+    return len(n)
 
 
 if __name__ == "__main__":
