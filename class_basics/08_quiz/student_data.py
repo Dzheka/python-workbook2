@@ -25,3 +25,6 @@ student_data = {
     "Ismoiljon": {"score": "0%", "ratings": []},
     "Nizar": {"score": "72%", "ratings": [4, 3, 2, 8, 5, 4, 10, 5, 2, 3, 3, 3, 4, 5, 4, 4, 3]},
 }
+
+def give():
+    return student_data
