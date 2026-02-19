@@ -1,8 +1,5 @@
 def factorial(n: int) -> int:
-    if ( n <= 1):
-        return 1;
-
-    return n * factorial(n-1);
+    """ your code """
 
 
 if __name__ == "__main__":

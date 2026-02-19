@@ -1,13 +1,5 @@
 def remove_duplicate_letters(text: str) -> str:
-    st = {}
-    unique = ""
-
-    for letter in text:
-        if letter not in st:
-            st[letter] = 1
-            unique = unique + letter
-
-    return  unique
+    """ your code """
 
 
 if __name__ == "__main__":

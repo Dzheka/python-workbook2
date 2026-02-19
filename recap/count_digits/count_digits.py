@@ -1,9 +1,6 @@
 def count_digits(n: int) -> int:
-    n = abs(n)
-    if ( n < 10 ):
-        return 1;
+    """ your code """
 
-    return 1 + count_digits(n//10);
 
 if __name__ == "__main__":
     print(count_digits(0))  # 1

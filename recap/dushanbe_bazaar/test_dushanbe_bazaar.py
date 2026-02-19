@@ -13,7 +13,7 @@ def test_load_non_existent_file():
 
 
 def test_save_and_load_file(temp_inventory_file):
-    inventory = [{"name": "Qurut", "price": 1.5, "quantity": 200}]
+    inventory = [{"name": "Qurut", "price_tjs": 1.5, "quantity": 200}]
     save_to_file(inventory, temp_inventory_file)
 
     loaded = load_from_file(temp_inventory_file)
