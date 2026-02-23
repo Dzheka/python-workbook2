@@ -3,4 +3,3 @@ class RGBColor:
         self.r = r
         self.g = g
         self.b = b
-
