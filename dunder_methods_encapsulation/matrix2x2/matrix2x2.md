@@ -25,23 +25,4 @@ print(m3)
 # |6 8|
 # |10 12|
 ```
-```python
-class Matrix2x2:
 
-    def __init__(self, a, b, c, d):
-        self.data = [[a, b], [c, d]]
-
-    def __str__(self):
-        r0 = f"|{self.data[0][0]} {self.data[0][1]}|"
-        r1 = f"|{self.data[1][0]} {self.data[1][1]}|"
-        return f"{r0}\n{r1}"
-
-    def __eq__(self, other):
-        pass
-
-    def __add__(self, other):
-        pass
-
-    def __getitem__(self, row):
-        pass
-```
