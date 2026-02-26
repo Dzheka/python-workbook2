@@ -1,15 +1,15 @@
 class WordBox:
-    def __init(self, words=None):
+    def __init__(self, words=None):
         self.words = words
 
     def add(self, word):
-        return self.words.append(word).lower()
+        return self.words.append(word.lower())
 
     def __len__(self):
         return len(self.words)
     
     def __contains__(self, word):
-        return self.words == word.words
+        return word.lower() in self.words
     
     def __str__(self):
         return f"WordBox({len(self.words)} words: {self.words})"
