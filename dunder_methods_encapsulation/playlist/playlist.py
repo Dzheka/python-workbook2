@@ -18,7 +18,7 @@ class Playlist:
         for song in self.songs:
             if song["title"] == title:
                 return True
-            return False
+        return False
 
 
     def __getitem__(self, index):
