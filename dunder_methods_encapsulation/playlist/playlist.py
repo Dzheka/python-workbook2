@@ -26,19 +26,26 @@ class Playlist:
 
 
     def __add__(self, other):
-        new_name = f"{self.name} + {other.name}"
-        new_playlist = Playlist(new_name)
-        new_playlist.songs = self.songs + other.songs
-
-        return new_playlist
+        new = Playlist(f"{self.name} + {other.name}")
+        new.songs = self.songs + other.songs
+        return new
 
 
     def __eq__(self, other):
         return self.songs == other.songs
 
 
+    @staticmethod
+    def _fmt(seconds):
+        return f"{seconds // 60}:{seconds % 60:02d}"
+
+
     def __str__(self):
-        return  format(self.songs)
+        total = sum(s["duration"] for s in self.songs)
+        lines = [f"🎧 {self.name} ({len(self)} songs, {self._fmt(total)})"]
+        for i, s in enumerate(self.songs, 1):
+            lines.append(f"  {i}. {s['title']} ({self._fmt(s['duration'])})")
+        return "\n".join(lines)
 
 
 
