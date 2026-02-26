@@ -1,9 +1,9 @@
 class WordBox:
-    def __init__(self, words=None):
-        self.words = words
+    def __init__(self):
+        self.words = []
 
     def add(self, word):
-        return self.words.append(word.lower())
+        self.words.append(word.lower())
 
     def __len__(self):
         return len(self.words)
@@ -12,7 +12,7 @@ class WordBox:
         return word.lower() in self.words
     
     def __str__(self):
-        return f"WordBox({len(self.words)} words: {self.words})"
+        return f"WordBox({len(self.words)} words: {', '.join(self.words)})"
     
 box = WordBox()
 box.add("Hello")

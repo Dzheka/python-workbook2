@@ -1,21 +1,44 @@
 class Inventory:
-    def __init__(self, items = {}):
-        self.items = items
+    def __init__(self):
+        self.items = {}
 
     def add(self, item, qty=1):
-        qty.items += 1
-        return Inventory(self.items + item.items)
+        self.items[item] = self.items.get(item, 0) + qty
     
     def remove(self, item, qty=1):
-        qty.items -= 1
-        return Inventory(self.items - item.items)
+        if item in self.items:
+            self.items[item] -= qty
+            if self.items[item] <= 0:
+                del self.items[item]
     
     def __len__(self):
-        total = sum(self.items)
+        return sum(self.items.values())
 
     def __contains__(self, item):
-        pass
+        return item in self.items
+    
+    def __getitem__(self, item):
+        return self.items.get(item, 0)
+    
+    def __add__(self, other):
+        new_inv = Inventory()
+        for item, qty in self.items.items():
+            new_inv.add(item, qty)
 
+        for item, qty in other.items.items():
+            new_inv.add(item, qty)
+        return new_inv
+    
+    def __eq__(self, other):
+        return self.items == other.items
+    
+    def __str__(self):
+        if not self.items:
+            return "Inventory(empty)"
+        lines = ["Inventory:"]
+        for item, qty in self.items.items():
+            lines.append(f"- {item}: {qty}")
+        return "\n".join(lines)
 
 inv1 = Inventory()
 inv1.add("Sword")

@@ -15,6 +15,9 @@ class Movie:
     
     def __lt__(self,other):
         return self.rating < other.rating
+    
+    def __repr__(self):
+        return self.__str__()
 
 m1 = Movie("Inception", 9.2, 2010)
 m2 = Movie("Titanic", 8.5, 1997)
