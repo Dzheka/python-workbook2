@@ -20,6 +20,9 @@ class Fraction:
     def __lt__(self, other):
         return self.numerator * other.denominator < self.denominator * other.numerator
     
+    def __repr__(self):
+        return self.__str__()
+    
 a = Fraction(1, 2)
 b = Fraction(1, 3)
 c = Fraction(2, 4)

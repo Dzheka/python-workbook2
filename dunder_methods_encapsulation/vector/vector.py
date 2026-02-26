@@ -30,10 +30,7 @@ class Vector:
         return math.sqrt(self.x**2 + self.y**2) < math.sqrt(other.x**2 + other.y**2)
 
     def __bool__(self):
-        if self.x and self.y != 0:
-            return True
-        else:
-            return False
+        return not (self.x == 0 and self.y == 0)
 
 v1 = Vector(3, 4)
 v2 = Vector(1, 2)
