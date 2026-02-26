@@ -1,5 +1,5 @@
 class WordBox:
-    def __init(self, words=[]):
+    def __init(self, words=None):
         self.words = words
 
     def add(self, word):
