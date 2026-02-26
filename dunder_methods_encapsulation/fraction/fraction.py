@@ -1,9 +1,9 @@
-import math
+from math import gcd
 class Fraction:
     def __init__(self,numerator,denominator):
         self.numerator = numerator
         self.denominator = denominator
-        gcd = math.gcd(numerator, denominator)
+
 
 
     def __str__(self):
