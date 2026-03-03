@@ -43,7 +43,11 @@ Read these in order before starting the exercises:
 
 ### Beginner
 
+<<<<<<< HEAD
 1. [temperature](../playlist/playlist.md) — `__str__`, `__eq__`, `__lt__`, `__add__`
+=======
+1. [temperature](../temperature/temperature.md) — `__str__`, `__eq__`, `__lt__`, `__add__`
+>>>>>>> main
 1. [word_box](../word_box/word_box.md) — `__len__`, `__contains__`, `__str__`
 1. [counter](../counter/counter.md) — `__str__`, `__eq__`, `__add__`, `__bool__`
 

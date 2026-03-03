@@ -24,3 +24,30 @@ print("red" in red)     # True
 print("green" in red)   # False
 print("blue" in blue)   # True
 ```
+<<<<<<< HEAD
+=======
+
+```python
+class RGBColor:
+
+    def __init__(self, r, g, b):
+        pass
+        
+    def __str__(self):
+        pass
+
+    def __repr__(self):
+        return f"RGBColor({self.r}, {self.g}, {self.b})"
+
+    def __eq__(self, other):
+        pass
+
+    def __add__(self, other):
+        pass
+
+    def __contains__(self, channel):
+        mapping = {"red": self.r, "green": self.g, "blue": self.b}
+        return mapping.get(channel, 0) > 0
+
+```
+>>>>>>> main
