@@ -4,7 +4,7 @@ You already know how to create basic classes. Now build a system that actually w
 
 ## Data
 
-Use the same `quiz_data.py` file.
+Use the same `student-data.py` file.
 
 ## Task
 
@@ -43,5 +43,5 @@ It should be able to:
 - All logic must live inside the classes
 - Use `__str__` in Student
 - No global variables — everything goes through objects
-- Student objects must be created from `quiz_data.py`, not hardcoded
+- Student objects must be created from `student-data.py`, not hardcoded
 - Code must be clean and readable
