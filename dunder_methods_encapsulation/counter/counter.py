@@ -24,7 +24,7 @@ c1 = Counter()
 c1.increment()
 c1.increment()
 c1.increment()
-print(c1)           # Counter(3)
+print(c1)          # Counter(3)
 
 c2 = Counter(7)
 c3 = c1 + c2
