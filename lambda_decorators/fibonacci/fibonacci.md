@@ -1,6 +1,6 @@
 # Fibonacci
 
-Create a recursive function that returns the nth Fibonacci number.
+Create a function (without recursion) that returns the nth Fibonacci number. (Use generator)
 
 The Fibonacci sequence starts with 0 and 1, then each subsequent number is the sum of the two preceding ones: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...`
 
