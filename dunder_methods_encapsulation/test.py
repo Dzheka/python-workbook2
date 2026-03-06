@@ -13,7 +13,6 @@ def safe_import(module_path, class_name):
     except (ImportError, AttributeError):
         return None
 
-
 Temperature = safe_import("temperature.temperature", "Temperature")
 Counter = safe_import("counter.counter", "Counter")
 Fraction = safe_import("fraction.fraction", "Fraction")
