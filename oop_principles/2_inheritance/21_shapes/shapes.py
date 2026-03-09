@@ -7,18 +7,17 @@ class Shape:
         self.y = y
         
     def area(self):
-        return self.width * self.height
+        raise NotImplementedError("Subclasses must implement area()")
     
     def perimeter(self):
-        return 2 * (self.width + self.height)
-
+        raise NotImplementedError("Subclasses must implement perimeter()")
+    
     def move(self, new_x, new_y):
-        self.x = self.new_x
-        self.y = self.new_y
-        return Shape(self.x, self.y)
+        self.x = new_x
+        self.y = new_y
 
     def get_info(self):
-        pass
+        return f"Shape(color={self.color}, position=({self.x}, {self.y}))"
 
 class Rectangle(Shape):
     def __init__(self, color, x, y, width, height):
@@ -36,40 +35,62 @@ class Rectangle(Shape):
         return self.width == self.height
     
     def resize(self, new_width, new_height):
-        new_width.width = self.width
-        new_height.height = self.height
-        return new_width.width, new_height.height
+        self.width = new_width
+        self.height = new_height
 
 class Circle(Shape):
-    def __init__(self, color, x, y, width, height, radius):
-        super().__init__(color, x, y, width, height)
+    def __init__(self, color, x, y, radius):
+        super().__init__(color, x, y)
         self.radius = radius
 
     def area(self):
-        return 3.14 * ((self.radius)**2)
+        return math.pi * self.radius ** 2
     
     def perimeter(self):
-        return 2*3.14*self.radius
+        return 2 * math.pi * self.radius
     
     def diameter(self):
-        return 2*self.radius
+        return 2 * self.radius
     
     def set_radius(self, new_radius):
-        self.radius = new_radius.radius
-        return self.radius
+        self.radius = new_radius
 
 class Triangle(Shape):
-    def __init__(self, color, x, y, width, height, radius, side_a, side_b, side_c):
-        super().__init__(color, x, y, width, height, radius)
+    def __init__(self, color, x, y, side_a, side_b, side_c):
+        super().__init__(color, x, y)
         self.side_a = side_a
         self.side_b = side_b
         self.side_c = side_c
 
+    def perimeter(self):
+        return self.side_a + self.side_b + self.side_c
+    
+    def area(self):
+        s = self.perimeter() / 2
+        return math.sqrt(s*(s-self.side_a)*(s-self.side_b)*(s-self.side_c))
+    
+    def is_valid(self):
+        return (self.side_a + self.side_b > self.side_c and
+                self.side_a + self.side_c > self.side_b and
+                self.side_b + self.side_c > self.side_a)
+    
+    def triangle_type(self):
+        if self.side_a == self.side_b == self.side_c:
+            return "equilateral"
+        elif (self.side_a == self.side_b or
+              self.side_a == self.side_c or
+              self.side_b == self.side_c):
+            return "isosceles"
+        else:
+            return "scalene"
 
+
+# Create different shapes
 rectangle = Rectangle("blue", 0, 0, 5, 3)
 circle = Circle("red", 10, 10, 4)
 triangle = Triangle("green", 5, 5, 3, 4, 5)
 
+# Display basic information
 print("Rectangle:")
 print(f"Color: {rectangle.color}")
 print(f"Position: ({rectangle.x}, {rectangle.y})")
