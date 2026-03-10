@@ -2,7 +2,11 @@
 
 ## Data
 
+<<<<<<< HEAD
+You are given a file `quiz_data.py` containing a dictionary with quiz results. Each key is a student's name, and the value is a list of scores for 17 problems. A score of 0 means the problem was not solved. An empty list means the student was absent.
+=======
 You are given a file `student-data.py` containing a dictionary with quiz results. Each key is a student's name, and the value is a list of scores for 17 problems. A score of 0 means the problem was not solved. An empty list means the student was absent.
+>>>>>>> main
 
 Import this data in your code:
 ```python
@@ -32,7 +36,11 @@ The class should have the following methods:
 
 ### Step 2: Create objects
 
+<<<<<<< HEAD
+Read the data from `quiz_data.py` and create a `Student` object for each student. Convert the list into a dictionary (problem 1 → first score, problem 2 → second score, etc.). Students with empty lists should still be created with all problems scored as 0.
+=======
 Read the data from `student-data.py` and create a `Student` object for each student. Convert the list into a dictionary (problem 1 → first score, problem 2 → second score, etc.). Students with empty lists should still be created with all problems scored as 0.
+>>>>>>> main
 
 ### Step 3: Add extra points
 
@@ -75,7 +83,11 @@ Create a `Problem` object for each of the 17 quiz problems, calculate the averag
 - Average score per problem must be calculated inside the `Problem` class
 - All logic must live inside classes, not outside
 - Use `__init__` for initialization
+<<<<<<< HEAD
+- Student objects must be created from `quiz_data.py`, not hardcoded one by one
+=======
 - Student objects must be created from `student-data.py`, not hardcoded one by one
+>>>>>>> main
 - Code must be clean and readable
 
 ## Submission
