@@ -20,5 +20,6 @@ def get_season():
     else:
         print("Winter")
 
+
 if __name__ == "__main__":
     get_season()
