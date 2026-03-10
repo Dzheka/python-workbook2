@@ -1,26 +1,19 @@
-#  **Topic:** Bank | **Concept:** Decorator
+Topic: Bank | Concept: Decorator
+Write a decorator log_transaction that:
 
-Write a decorator `log_transaction` that:
-- prints `"Transaction started"` before the function runs
-- prints `"Transaction finished: <return_value>"` after it runs
-- returns the original return value unchanged
+prints "Transaction started" before the function runs
+prints "Transaction finished: <return_value>" after it runs
+returns the original return value unchanged
+Apply it to a function transfer(amount) that simply returns the amount.
 
-Apply it to a function `transfer(amount)` that simply returns the amount.
-
-```python
 # Your code here
 
-@log_transaction
+@log_transaction     
 def transfer(amount):
     return amount
-```
-
-**Expected output:**
-```
+Expected output:
+ 
 transfer(500)
 # Transaction started
 # Transaction finished: 500
 # → 500
-```
-
----
