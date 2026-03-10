@@ -1,5 +1,12 @@
 def inventory_to_dict(inventory_list):
-    """ your code """
+    result = {}
+    for item in inventory_list:
+        result[item[0]] = {
+            "name": item[1],
+            "price": item[2],
+            "category": item[3]
+        }
+    return result
 
 
 def main():

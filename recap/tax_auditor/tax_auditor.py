@@ -1,10 +1,23 @@
 def calculate_tax(category, price):
-    """ your code """
+    if category == "Food":
+        return price * 0.05
+    elif category == "Electronics":
+        return price * 0.20
+    else:
+        return price * 0.10
 
 
 def process_sales(data_list):
-        """ your code """
-
+    result = {}
+    for sale in data_list:
+        tax = calculate_tax(sale[2], sale[3])
+        total = sale[3] + tax
+        result[sale[0]] = {
+            "name": sale[1],
+            "total_price": total,
+            "is_premium": total > 500
+        }
+    return result
 
 
 def main():
