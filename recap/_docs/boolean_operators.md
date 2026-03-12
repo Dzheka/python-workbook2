@@ -19,7 +19,7 @@ Returns `True` only when both conditions are true.
 
 ### 2. `or` Operator
 
-Returns `True` when at least one condition is true.
+Returns `True` when at least one condition is trueCX.
 
 | A     | B     | A or B |
 |-------|-------|--------|
