@@ -1,7 +1,9 @@
 import os
 
+
 class InsufficientStockError(Exception):
     """Custom exception for stock issues."""
+
     pass
 
 
