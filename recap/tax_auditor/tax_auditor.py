@@ -1,9 +1,28 @@
-def calculate_tax(category, price):
-    """ your code """
-
+def calculate_tax(category, price: int):
+    if category == "Food":
+        return price*21/20
+    elif category == "Electronics":
+        return price*6/5
+    else:
+        return price*11/10
 
 def process_sales(data_list):
-        """ your code """
+    big = dict()
+    for i in range (len(data_list)):
+      each = data_list[i]
+      category = each[2]
+      price = each[3]
+      small = dict()
+      small["name"] = each[1]
+      small["total_price"] = calculate_tax(category,price)
+      if small["total_price"] > 500:
+        small["is_premium"] = True
+      else:
+        small["is_premium"] = False
+      ID = each[0]
+      big[ID] = small
+    return big
+
 
 
 

@@ -13,7 +13,7 @@ You are managing a warehouse in Dushanbe using a simple text-based database (`in
 
 2.  **`load_from_file(filename)`**:
     - Read the file and return a list of dictionaries.
-    - **Error Handling**: 
+    - **Error Handling**:
         - If the file doesn't exist, return an empty list.
         - Use `try-except` to skip lines that are formatted incorrectly (e.g., missing a comma or having text where a number should be).
 

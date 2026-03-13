@@ -1,5 +1,14 @@
 def inventory_to_dict(inventory_list):
-    """ your code """
+  bigdict = dict()
+  for i in range(len(inventory_list)):
+    dic = dict()
+    each = inventory_list[i]
+    code = each[0]
+    dic["name"] = each[1]
+    dic["price"] = each[2]
+    dic["category"] = each[3]
+    bigdict[code] = dic
+  return bigdict
 
 
 def main():
