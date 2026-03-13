@@ -18,7 +18,7 @@ students_data = {
 
 @app.route("/")
 def main():
-    return render_template("/main_page.html")
+    return render_template("/home.html")
 
 
 @app.route("/about")
@@ -32,7 +32,7 @@ def list_students():
 
     if search_query:
         filtered_students = {
-            name: score for name, score in students_data.items() 
+            name: score for name, score in students_data.items()
             if search_query in name.lower()
         }
     else:
@@ -43,13 +43,13 @@ def list_students():
 
 @app.route("/student/<name>")
 def student_detail(name):
-    name  = name.title() 
+    name  = name.title()
 
     if name not in students_data:
         return render_template("/404.html")
-    
+
     score = students_data[name]
-    
+
     if score >= 80:
         result = 'Excellent'
     elif 50 <= score <= 79:
@@ -58,7 +58,7 @@ def student_detail(name):
         result = "Needs improvement"
     else:
         result = "No data"
-    
+
     return render_template("student.html", name=name, score=score, result=result)
 
 
@@ -93,7 +93,7 @@ def one_student(name):
 @app.route("/add", methods=["GET", "POST"])
 def add_student():
     error = None
-    
+
     if request.method == "POST":
         name = request.form.get("name", "").strip().title()
         score_str = request.form.get("score")
@@ -107,14 +107,14 @@ def add_student():
                 score = int(score_str)
                 if 0 <= score <= 100:
                     students_data[name] = score
-                    return redirect("/students") 
+                    return redirect("/students")
                 else:
                     error = "Error: Score must be between 0 and 100."
             except (ValueError, TypeError):
                 error = "Error: Please enter a valid numerical score."
 
     return render_template("add.html", error=error)
-        
+
 
 
 if __name__ == "__main__":
