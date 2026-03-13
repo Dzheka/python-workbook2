@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --brand-red: #dd4b39; 
+            --bg-dark: #0f172a; 
+        }
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 50%, rgba(221, 75, 57, 0.1) 0%, transparent 50%);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0;
+            color: var(--brand-red);
+            text-shadow: 0 0 30px rgba(221, 75, 57, 0.3);
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn-home {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f8fafc;
+            padding: 12px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-home:hover {
+            background: var(--brand-red);
+            border-color: var(--brand-red);
+            color: white;
+            box-shadow: 0 10px 20px rgba(221, 75, 57, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Student not found</p>
+        <a href="/students" class="btn-home">Return to Leaderboard</a>
+    </div>
+</body>
+</html>
