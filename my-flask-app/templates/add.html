@@ -1,0 +1,81 @@
+<style>
+    :root {
+        --apple-green: #30d158;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        font-family: -apple-system, sans-serif;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .sheet-card {
+        background: rgba(28, 28, 30, 0.8);
+        backdrop-filter: blur(40px);
+        border-radius: 40px;
+        padding: 3rem;
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .input-group-apple {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group-apple label {
+        display: block;
+        color: #86868b;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        margin-left: 10px;
+    }
+
+    .apple-input {
+        background: rgba(255, 255, 255, 0.05);
+        border: none;
+        border-radius: 18px;
+        padding: 16px;
+        color: #fff;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .apple-input:focus {
+        outline: 2px solid var(--apple-green);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-submit {
+        background: #fff;
+        color: #000;
+        width: 100%;
+        padding: 16px;
+        border-radius: 20px;
+        border: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+</style>
+
+<div class="sheet-card">
+    <h2 class="fw-bold mb-4">New Student</h2>
+    <form method="POST">
+        <div class="input-group-apple">
+            <label>Name</label>
+            <input type="text" name="name" class="apple-input" placeholder="Enter full name" required>
+        </div>
+        <div class="input-group-apple">
+            <label>Exam Score</label>
+            <input type="number" name="score" class="apple-input" placeholder="0-100" required>
+        </div>
+        <button type="submit" class="btn-submit">Add to Records</button>
+    </form>
+</div>

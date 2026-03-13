@@ -1,0 +1,54 @@
+<style>
+    body {
+        background: #000;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, sans-serif;
+    }
+
+    .glow-404 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: #30d158;
+        filter: blur(120px);
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .content {
+        z-index: 1;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 10rem;
+        font-weight: 800;
+        letter-spacing: -5px;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: #86868b;
+        margin-bottom: 2rem;
+    }
+
+    .btn-rounded {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+</style>
+
+<div class="glow-404"></div>
+<div class="content">
+    <h1>404</h1>
+    <p>Student not found.</p>
+    <a href="/" class="btn-rounded">Go Home</a>
+</div>

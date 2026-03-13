@@ -32,36 +32,3 @@ if not v0:
 vectors = [Vector(5, 0), Vector(1, 1), Vector(3, 4)]
 print(sorted(vectors))  # [Vector(1, 1), Vector(3, 4), Vector(5, 0)]
 ```
-
-```python
-class Vector:
-    def __init__(self, x, y):
-        pass
-
-    def __str__(self):
-        pass
-
-    def __repr__(self):
-        pass
-
-    def __eq__(self, other):
-        pass
-
-    def __add__(self, other):
-        pass
-
-    def __sub__(self, other):
-        pass
-
-    def __mul__(self, scalar):
-        pass
-
-    def __abs__(self):
-        pass
-
-    def __lt__(self, other):
-        pass
-
-    def __bool__(self):
-        pass
-```
