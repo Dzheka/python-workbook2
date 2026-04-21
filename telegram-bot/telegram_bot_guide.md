@@ -33,7 +33,6 @@ telegram-bot/
 | Python 3.11+ | Language | https://python.org |
 | uv | Package manager | See Step 1 |
 | PostgreSQL | Database | https://postgresql.org |
-| ngrok | Expose localhost | https://ngrok.com |
 | Telegram account | Create a bot | https://t.me/BotFather |
 
 ---
@@ -173,7 +172,7 @@ Add your secrets:
 # .env
 BOT_TOKEN=123456789:AAFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 DATABASE_URL=postgresql://bot_user:yourpassword@localhost:5432/telegram_bot_db
-WEBHOOK_URL=https://YOUR-NGROK-URL.ngrok.io
+WEBHOOK_URL=https://your-public-domain.com
 ```
 
 Add `.env` to `.gitignore` immediately:
@@ -493,43 +492,7 @@ if __name__ == "__main__":
 
 ---
 
-## Step 8 — Expose Localhost with ngrok
-
-Telegram requires a public HTTPS URL to deliver updates to your bot. During development, use ngrok to create a tunnel from the internet to your local machine.
-
-### 8.1 — Install ngrok
-
-Download from https://ngrok.com/download or:
-```bash
-# macOS (Homebrew)
-brew install ngrok
-
-# Linux (snap)
-snap install ngrok
-```
-
-### 8.2 — Start the tunnel
-```bash
-ngrok http 5000
-```
-
-You will see output like:
-```
-Forwarding  https://abc123.ngrok.io -> http://localhost:5000
-```
-
-### 8.3 — Update your .env
-
-Copy the `https://...ngrok.io` URL and update `.env`:
-```ini
-WEBHOOK_URL=https://abc123.ngrok.io
-```
-
-> Note: The ngrok URL changes every time you restart it on the free plan. Update `.env` each time.
-
----
-
-## Step 9 — Run the Bot
+## Step 8 — Run the Bot
 
 ```bash
 uv run python app.py
@@ -543,7 +506,7 @@ Webhook registered: https://abc123.ngrok.io/webhook/123456789:AAF...
 
 ---
 
-## Step 10 — Test Your Bot
+## Step 9 — Test Your Bot
 
 1. Open Telegram
 2. Search for your bot by its username (e.g. `@my_hello_world_bot`)
@@ -560,7 +523,7 @@ Nice to meet you, YourName.
 
 ---
 
-## Step 11 — Verify the Database
+## Step 10 — Verify the Database
 
 Check that messages are being saved:
 ```bash
@@ -601,7 +564,7 @@ dependencies = [
 ```ini
 BOT_TOKEN=123456789:AAFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 DATABASE_URL=postgresql://bot_user:yourpassword@localhost:5432/telegram_bot_db
-WEBHOOK_URL=https://YOUR-NGROK-URL.ngrok.io
+WEBHOOK_URL=https://your-public-domain.com
 ```
 
 ### `db.py`
@@ -620,11 +583,7 @@ Every time you work on the project:
 # 1. Start PostgreSQL (if not running as a service)
 pg_ctl start
 
-# 2. Start ngrok
-ngrok http 5000
-# Copy the new HTTPS URL to .env -> WEBHOOK_URL=...
-
-# 3. Run the bot
+# 2. Run the bot
 uv run python app.py
 ```
 
@@ -636,9 +595,9 @@ uv run python app.py
 |-------|-------|-----|
 | `telegram.error.InvalidToken` | Wrong or missing BOT_TOKEN | Check `.env`, no spaces around `=` |
 | `psycopg2.OperationalError` | Cannot connect to Postgres | Check `DATABASE_URL`, ensure Postgres is running |
-| `400 Bad Request: bad webhook` | ngrok URL is HTTP, not HTTPS | Make sure `WEBHOOK_URL` starts with `https://` |
+| `400 Bad Request: bad webhook` | WEBHOOK_URL is HTTP, not HTTPS | Make sure `WEBHOOK_URL` starts with `https://` |
 | `conflict: terminated by other getUpdates request` | Two instances running | Stop all other instances, restart once |
-| Webhook not receiving updates | ngrok restarted, URL changed | Update `WEBHOOK_URL` in `.env` and restart app |
+| Webhook not receiving updates | Public URL changed | Update `WEBHOOK_URL` in `.env` and restart app |
 
 ---
 
