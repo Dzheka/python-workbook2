@@ -1,9 +1,25 @@
 def calculate_tax(category, price):
-    """ your code """
+    if category == "Food":
+        return price * 0.05
+    if category == "Electronics":
+        return price * 0.2
+    return price * 0.1
 
 
 def process_sales(data_list):
-        """ your code """
+        if data_list == []:
+            return {}
+        result = {}
+        for i in range (len(data_list)):
+             tax = calculate_tax(data_list[i][2], data_list[i][3])
+             total_price = data_list[i][3]  + tax
+             result[data_list[i][0]] = {
+                 "name" : data_list[i][1],
+                 "total_price" : total_price,
+                 "is_premium" : total_price>500
+             }
+        return result
+
 
 
 
