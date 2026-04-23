@@ -1,0 +1,84 @@
+<style>
+    :root {
+        --apple-green: #30d158;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        font-family: -apple-system, sans-serif;
+        padding: 40px 20px;
+    }
+
+    .glass-list {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(25px);
+        border-radius: 35px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .search-pill {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 15px;
+        padding: 12px 20px;
+        color: #fff;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .student-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+    }
+
+    .student-row:last-child {
+        border: none;
+    }
+
+    .student-row:hover {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+    }
+
+    .rank-num {
+        color: #86868b;
+        font-weight: 600;
+        width: 30px;
+    }
+
+    .name-txt {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .score-badge {
+        background: rgba(48, 209, 88, 0.15);
+        color: var(--apple-green);
+        padding: 4px 14px;
+        border-radius: 12px;
+        font-weight: 700;
+    }
+</style>
+
+<div class="container" style="max-width: 600px;">
+    <h2 class="text-center mb-4 fw-bold">Leaderboard</h2>
+    <input type="text" class="search-pill" placeholder="Search students...">
+    <div class="glass-list">
+        {% for name, score in students.items() %}
+        <div class="student-row">
+            <div class="d-flex align-items: center">
+                <span class="rank-num">{{ loop.index }}</span>
+                <span class="name-txt">{{ name }}</span>
+            </div>
+            <span class="score-badge">{{ score }}</span>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>

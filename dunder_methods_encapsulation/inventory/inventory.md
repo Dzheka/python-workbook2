@@ -36,34 +36,3 @@ inv1.remove("Potion", 2)
 print(inv1["Potion"])      # 1
 ```
 
-```python
-class Inventory:
-
-    def __init__(self):
-        self.items = {}
-
-    def add(self, item, qty=1):
-        pass
-
-    def remove(self, item, qty=1):
-        pass
-
-    def __len__(self):
-        pass
-
-    def __contains__(self, item):
-        pass
-
-    def __getitem__(self, item):
-        pass
-
-    def __add__(self, other):
-        pass
-
-    def __eq__(self, other):
-        pass
-
-    def __str__(self):
-        pass
-
-```

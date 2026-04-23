@@ -1,0 +1,32 @@
+/* Container for consistent layout */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* Profile styling */
+.profile-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Status colors */
+.status-excellent { color: green; font-weight: bold; }
+.status-good { color: blue; }
+.status-needs-improvement { color: orange; }
+.status-no-data { color: gray; }
+
+/* Link styling (No underline as per Task 7) */
+.back-link {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    margin-top: 20px;
+}
+.back-link:hover {
+    color: #007bff;
+}
