@@ -1,19 +1,13 @@
 class BankAccountA:
-    """
-    This solution uses explicit 'getter' and 'setter' methods
-    to protect the _balance attribute and provides safe transfer methods.
-    """
+
 
     def __init__(self, account_holder, balance) -> None:
         self.account_holder = account_holder
-        # "Private" attribute for internal use
         self._balance = balance
 
-    # Getter: A public method to READ the data
     def get_balance(self):
         return self._balance
 
-    # Setter: A public method to WRITE the data, with rules
     def set_balance(self, amount):
         if isinstance(amount, (int, float)) and amount >= 0:
             self._balance = amount
