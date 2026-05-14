@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History</title>
+</head>
+
+<body>
+    <h1>History</h1>
+    <form method="GET">
+        <input type="text" name="search" placeholder="Search expression">
+        <select name="operation">
+            <option value="">All</option>
+            <option value="sqrt">sqrt</option>
+            <option value="sin">sin</option>
+            <option value="cos">cos</option>
+            <option value="tan">tan</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <a href="/clear">Clear History</a>
+    <ul>
+        {% for row in data %}
+        <li>{{ row.expression }} = {{ row.result }} ({{ row.operation }}) - {{ row.created_at }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+
+</html>

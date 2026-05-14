@@ -1,12 +1,15 @@
 def get_status(score):
-        """ your code """
+    return "Pass" if score >= 50 else "Fail"
 
 
 def process_grades(data):
-    """ your code """
+    result = {}
+    for name, score in data:
+        result[name] = get_status(score)
+    return result
 
 
-def main():
+if __name__ == "__main__":
     raw_scores = [
         ["Alice", 85],
         ["Bob", 42],
@@ -14,10 +17,13 @@ def main():
         ["David", 25],
         ["Eve", 95]
     ]
+    print(process_grades(raw_scores))
 
-    result = process_grades(raw_scores)
-    print(result)
+    raw_scores = [
+        ["John", 50],
+        ["Jane", 49]
+    ]
+    print(process_grades(raw_scores))
 
-
-if __name__ == "__main__":
-    main()
+    raw_scores = []
+    print(process_grades(raw_scores))

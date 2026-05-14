@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../OneDrive/Desktop"
+		}
+	],
+    "settings": {
+        "workbench.editorAssociations": {
+            "*.md": "vscode.markdown.preview.editor"
+        },
+        "terminal.integrated.copyOnSelection": true,
+        "git.confirmSync": false,
+        "explorer.confirmDelete": false,
+        "breadcrumbs.enabled": false
+    }
+}
